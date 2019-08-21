@@ -6,9 +6,12 @@ int main(void)
 	char *line;
 	char **parse;
 
-	line = read_line();
-	parse = splits(line);
-	execute(parse);
+	while (line)
+	{
+		line = read_line();
+		parse = splits(line);
+		execute(parse);
+	}
 
 	free(line);
 	free(parse);
