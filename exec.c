@@ -14,7 +14,6 @@ void execute(char **parse)
 	pid = fork();
 	if (pid == 0)
 	{
-		write(1, ":D", 2);
 		if (execve(parse[0], parse, NULL) == -1)
 		{
 			perror("Error:");
