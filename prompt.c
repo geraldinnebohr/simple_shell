@@ -11,7 +11,7 @@ char *read_line(void)
 	size_t size = 0;
 	int ret = 0;
 
-	_puts("$ ");
+	_puts("\x1B[32m simple@shell $ \x1B[0m");
 	if(getline(&line, &size, stdin) == -1)
 	{
 		free(line);
