@@ -20,7 +20,9 @@ In simple words, the shell is a program that takes commands from the keyboard an
 
 ## Example
 ### Clone repo using HTTPS
-``` $ git clone https://github.com/geraldinnebohr/simple_shell.git ```
+```
+$ git clone https://github.com/geraldinnebohr/simple_shell.git
+```
 
 ### Compilation
 You can compile the files using this command to check that there are no errors:
