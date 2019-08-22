@@ -8,5 +8,7 @@
 #include <sys/wait.h>
 char *read_line(void);
 char **splits(char *line);
-void execute(char **parse);
+int execute(char **parse);
+void _puts(char *str);
+int _putchar (char c);
 #endif

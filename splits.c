@@ -50,13 +50,15 @@ char **splits(char *line)
 {
 	char *token;
 	char **pptoken;
-	int buf = 1024, i = 0, j;
+	int buf = 1024, i = 0;
 	char *delim;
 
 	delim = " ";
 	pptoken = malloc(sizeof(char*) * buf);
 	token = strtok(line, delim);
 
+	if (!pptoken)
+		exit(99);
 	while (token != NULL)
 	{
 		pptoken[i] = token;
@@ -66,14 +68,13 @@ char **splits(char *line)
 		{
 			buf += buf;
 			pptoken = _realloc(pptoken, buf, buf * (sizeof(char*)));
+			if (!pptoken)
+				exit(98);
 		}
 
 		token = strtok(NULL, delim);
 	}
 	pptoken[i] = NULL;
-
-	for (j = 0;  pptoken[j]; j++)
-		printf("%s\n", pptoken[j]);
 
 	return (pptoken);
 }
