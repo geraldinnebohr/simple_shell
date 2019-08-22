@@ -1,10 +1,9 @@
 # Simple Shell project
 ![Holberton logo](https://www.holbertonschool.com/holberton-logo.png)
 > Create a simple UNIX command interpreter in C programming language
-> Version: 0.1
 
 ## simple_shell
-The objective of this project is to create from scratch a simple shell with limited functionality but aplying the coreconcepts of a most rubust shell.
+The objective of this project is to create from scratch a simple shell with limited functionality but applying the core concepts of a more rubust shell.
 
 ## Learning objectives
 * How does a shell work.
@@ -12,7 +11,7 @@ The objective of this project is to create from scratch a simple shell with limi
 * How to manipulate the environment of the current process.
 * What is the difference between a function and a system call.
 * How to create processes.
-* How does the sehll use the ```PATH``` to find the programs.
+* How does the shell use the ```PATH``` to find the programs.
 * How to execute another program with the ```execve``` system call.
 * How to suspend the execution of a process until one of its children terminates.
 
@@ -25,7 +24,9 @@ In simple words, the shell is a program that takes commands from the keyboard an
 
 ### Compilation
 You can compile the files using this command to check that there are no errors:
-``` $ gcc -Wall -pedantic -Werror Wextra *.c -o hsh```
+```
+$ gcc -Wall -pedantic -Werror Wextra *.c -o hsh
+```
 
 ### Usage
 Enter the interactive mode after compilation:
@@ -36,6 +37,10 @@ $ ./hsh
  simple@shell $
  simple@shell $ exit
 $
+```
+
+## Contribution
+Create a new branch with the name of your feature or fix and do a pull request to develop branch expalining your work.
 
 ## Authors
 * **Geraldinne Bohórquez** - [geraldinnebohr](https://github.com/geraldinnebohr)
