@@ -18,6 +18,9 @@ The objective of this project is to create from scratch a simple shell with limi
 ## Description of a shell
 In simple words, the shell is a program that takes commands from the keyboard and gives them to the operating system to perform. It incorporates many features and generally executes other commands.
 
+## Requirements
+Installed gcc (GNU Compiler Collection) version 4.8.4 or newer.
+
 ## Example
 ### Clone repo using HTTPS
 ```
@@ -42,7 +45,7 @@ $
 ```
 
 ## Contribution
-Create a new branch with the name of your feature or fix and do a pull request to develop branch expalining your work.
+Create a new branch with the name of your feature or fix and do a pull request to develop branch explaining your work.
 
 ## Authors
 * **Geraldinne Bohórquez** - [geraldinnebohr](https://github.com/geraldinnebohr)
