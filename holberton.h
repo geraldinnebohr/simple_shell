@@ -15,7 +15,7 @@
 typedef struct builtin
 {
 	char *s;
-	void (*f)(void);
+	int (*f)(void);
 }builtin_t;
 char *read_line(void);
 char **splits(char *line);
@@ -24,6 +24,7 @@ void _puts(char *str);
 int _putchar (char c);
 char *_strcat(char *dest, char *src);
 int _strcmp(char *, char *);
-void _help(void);
-void my_exit(void);
+int _help(void);
+int my_exit(void);
+int my_env(void);
 #endif

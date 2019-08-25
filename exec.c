@@ -5,6 +5,7 @@
  *
  * Return: Always 0.
  */
+extern char **environ;
 
 int execute(char **parse)
 {
@@ -16,16 +17,19 @@ int execute(char **parse)
 	builtin_t list[] = {
 		{"help", _help},
 		{"exit", my_exit},
+		{"env", my_env},
 		{NULL, NULL}
 	};
 
-	while (list[i].s != NULL && parse[0] != NULL)
+	if (parse[0] == NULL)
+		return (1);
+
+	while (list[i].s != NULL)
 	{
 		ptr = list[i].s;
-		if(_strcmp(parse[0], ptr) == 0)
+		if (_strcmp(parse[0], ptr) == 0)
 		{
-			list[i].f();
-			return (0);
+			return (list[i].f());
 		}
 		i++;
 	}
@@ -38,24 +42,38 @@ int execute(char **parse)
 		exit(1);
 	}
 	else if (pid > 0)
-	{
 		wait(&status);
-	}
 	else
 		perror("Error:");
 
-	return (0);
+	return (1);
 }
 
-void _help()
+int _help()
 {
 	_puts("Welcome to the simple shell help\n");
 	_puts("Type something and hit enter\n");
 	_puts("You can use exit to close interactive mode\n");
+	return (1);
 }
 
-void my_exit()
+int my_exit()
 {
 	_puts("Have a nice day!\n");
-	exit(1);
+	return (0);
+}
+
+int my_env()
+{
+	char *env = *environ;
+	int i = 0;
+
+	while (env != NULL)
+	{
+		_puts(env);
+		_puts("\n");
+		env = environ[i];
+		i++;
+	}
+	return (1);
 }
