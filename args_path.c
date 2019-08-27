@@ -29,8 +29,8 @@ char *_strcat(char *dest, char *src)
 
 char *args_path(char **parse, char **tokens)
 {
-	char **new, *total, **cat = NULL;
-	int i;
+	char **new, *total, **cat;
+	int i, j;
 	struct stat *status = NULL;
 
 	printf("estoy en args_path\n");
@@ -44,11 +44,19 @@ char *args_path(char **parse, char **tokens)
 		_strcat(total, "/");
 		_strcat(total, parse[0]);
 		printf("%s\n", total);
+
+		if (stat(total, status) == 0)
+		{
+			for (k = 0; parse[k]; k++)
+				
+			cat[0] = _strdup(total);
+			for (j = 1; parse[j]; j++)
+				cat[j] = _strdup(parse[j]);
+			execute(cat);
+		}
+
+		else
+			return (NULL);
 	}
-	cat[0] = new[0];
-	if (stat(total, status) == 0)
-		execute(new);
-	else
-		return (NULL);
 	return (total);
 }
