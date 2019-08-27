@@ -1,13 +1,14 @@
 #include "holberton.h"
 
 /**
- * main - execve example
+ * execute - execution of command
  *
- * Return: Always 0.
+ * @parse: tokenize string
+ * @line_n: counter of executions
+ *
+ * Return: return 0 or 1 status for loop
  */
-extern char **environ;
-
-int execute(char **parse)
+int execute(char **parse, int line_n)
 {
 	int i = 0;
 	pid_t pid;
@@ -18,6 +19,7 @@ int execute(char **parse)
 		{"help", _help},
 		{"exit", my_exit},
 		{"env", my_env},
+		{"cd", _cd},
 		{NULL, NULL}
 	};
 
@@ -28,52 +30,24 @@ int execute(char **parse)
 	{
 		ptr = list[i].s;
 		if (_strcmp(parse[0], ptr) == 0)
-		{
 			return (list[i].f());
-		}
 		i++;
 	}
-
 	pid = fork();
 	if (pid == 0)
 	{
 		if (execve(parse[0], parse, NULL) == -1)
-			perror("Error");
+		{
+			_puts("./hsh: ");
+			number_line(line_n);
+			perror(parse[0]);
+		}
 		exit(1);
 	}
 	else if (pid > 0)
 		wait(&status);
 	else
-		perror("Error:");
+		perror("./hsh: ");
 
-	return (1);
-}
-
-int _help()
-{
-	_puts("Welcome to the simple shell help\n");
-	_puts("Type something and hit enter\n");
-	_puts("You can use exit to close interactive mode\n");
-	return (1);
-}
-
-int my_exit()
-{
-	_puts("Have a nice day!\n");
-	return (0);
-}
-
-int my_env()
-{
-	char *env = *environ;
-	int i = 0;
-
-	while (env != NULL)
-	{
-		_puts(env);
-		_puts("\n");
-		env = environ[i];
-		i++;
-	}
 	return (1);
 }
