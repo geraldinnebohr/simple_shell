@@ -20,7 +20,7 @@ int main(int argc, char **argv, char **environ)
 		line = read_line();
 		parse = splits(line, delim);
 		args_path(parse, environ);
-		execute(parse);
+		/*execute(parse);*/
 		free(line);
 		free(parse);
 	}
