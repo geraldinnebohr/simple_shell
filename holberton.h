@@ -9,6 +9,17 @@
 #include <sys/wait.h>
 #include <limits.h>
 #include <signal.h>
+/**
+ * struct optype - struct for built in commands
+ *
+ * @s: string
+ * @f: pointer to function
+ */
+typedef struct builtin
+{
+	char *s;
+	int (*f)(void);
+}builtin_t;
 char *read_line(void);
 char **splits(char *line, char *delim);
 int execute(char **parse);
@@ -21,4 +32,9 @@ char *args_path(char **parse, char **tokens);
 char *_strdup(char *str);
 char *if_exists(char **environ);
 extern char **environ;
+char *_strcat(char *dest, char *src);
+int _strcmp(char *, char *);
+int _help(void);
+int my_exit(void);
+int my_env(void);
 #endif
