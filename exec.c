@@ -8,7 +8,7 @@
  *
  * Return: return 0 or 1 status for loop
  */
-int execute(char **parse, int line_n)
+int execute(char **parse)
 {
 	int i = 0;
 	pid_t pid;
