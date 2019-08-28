@@ -2,10 +2,7 @@
 
 /**
  * execute - execution of command
- *
  * @parse: tokenize string
- * @line_n: counter of executions
- *
  * Return: return 0 or 1 status for loop
  */
 int execute(char **parse)
@@ -40,7 +37,7 @@ int execute(char **parse)
 		{
 			perror("Error");
 			exit(1);
-    }
+		}
 	}
 	else if (pid > 0)
 		wait(&status);

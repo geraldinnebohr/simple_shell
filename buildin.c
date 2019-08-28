@@ -1,7 +1,5 @@
 #include "holberton.h"
 
-extern char **environ;
-
 /**
  * _help - print the help message for the user
  *
@@ -15,13 +13,13 @@ int _help(void)
 	return (1);
 }
 /**
- * my_exit - exti the program
+ * my_exit - exit the program
  *
  * Return: status condition to get out the loop
  */
 int my_exit(void)
 {
-	return (0);
+	exit(0);
 }
 /**
  * my_env - print the environmet variables

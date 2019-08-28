@@ -48,10 +48,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 /**
  * splits - tokenize the input string
- *
  * @line: string from input
- * @delim: delimitador
- *
+ * @delim: delimiter
  * Return: Array of pointers to every string
  */
 
@@ -59,8 +57,8 @@ char **splits(char *line, char *delim)
 {
 	char **pptoken;
 	int buf = 1024, i = 0;
-	
-	pptoken = malloc(sizeof(char*) * buf);
+
+	pptoken = malloc(sizeof(char *) * buf);
 	if (!pptoken)
 		exit(99);
 
