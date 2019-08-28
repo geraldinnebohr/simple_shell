@@ -11,7 +11,7 @@ int execute(char **parse)
 	pid_t pid;
 	int status;
 
-	_puts("3. Estoy en execute\n");
+	/*_puts("3. Estoy en execute\n");*/
 	pid = fork();
 	if (pid == 0)
 	{

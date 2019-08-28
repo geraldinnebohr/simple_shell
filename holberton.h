@@ -8,6 +8,7 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 #include <limits.h>
+#include <signal.h>
 char *read_line(void);
 char **splits(char *line, char *delim);
 int execute(char **parse);

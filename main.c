@@ -8,21 +8,26 @@
 int main(int argc, char **argv, char **environ)
 {
 	char *line = NULL;
-	char **parse;
 	char *delim = "\t \a\n";
-
+	char *command;
+	char **tokens;
 	(void)argc;
-	(void)argv;
 
+	tokens = find_path(environ);
 
+	signal(SIGINT, SIG_IGN);
 	while (1)
 	{
 		line = read_line();
-		parse = splits(line, delim);
-		args_path(parse, environ);
-		/*execute(parse);*/
+		argv = splits(line, delim);
+		printf("main argv[0] = %s\n", argv[0]);
+		command = args_path(argv, tokens);
+		printf("args path actual en main ==> %s\n", command);
+		if (command == NULL)
+			execute(argv);
 		free(line);
-		free(parse);
+		free(argv);
+		free(command);
 	}
 	return (0);
 }

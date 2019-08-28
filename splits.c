@@ -47,7 +47,7 @@ char **splits(char *line, char *delim)
 	char **pptoken;
 	int buf = 1024, i = 0;
 
-	_puts("Estoy en splits \n");
+	/*_puts("Estoy en splits \n");*/
 	pptoken = malloc(sizeof(char*) * buf);
 	if (!pptoken)
 		exit(99);
@@ -70,4 +70,3 @@ char **splits(char *line, char *delim)
 	}
 	return (pptoken);
 }
-

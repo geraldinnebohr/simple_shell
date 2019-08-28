@@ -9,9 +9,9 @@
 char **find_path(char **environ)
 {
 	char *get_path, **tokens, *delim;
-	/*int i;*/
+	/*int i;
 
-	printf("estoy en path\n");
+	printf("estoy en path\n");*/
 	delim = ":";
 	get_path = _getenv(environ, "PATH");
 	tokens = splits(get_path, delim);

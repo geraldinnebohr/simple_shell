@@ -27,15 +27,14 @@ char *_strcat(char *dest, char *src)
  *
  */
 
-char *args_path(char **parse, char **tokens)
+char *args_path(char **parse, char **new)
 {
-	char **new, *total, **cat;
+	char *total, **cat;
 	int i, j, k;
 	struct stat status;
-	printf("estoy en args_path\n");
+	/*printf("estoy en args_path\n");*/
 
-	new = find_path(tokens);
-	/*printf("%s\n", new[0]);*/
+	/*printf("aqui es new en cero%s\n", new[0]);*/
 	for (i = 0; new[i]; i++)
 	{
 		total = malloc(60);
@@ -45,19 +44,20 @@ char *args_path(char **parse, char **tokens)
 
 		if (stat(total, &status) == 0)
 		{
-			printf("skfkgng");
 			for (k = 0; parse[k] != '\0'; k++)
 				;
-
-			cat = malloc(sizeof(char *) * k);
+			cat = malloc(sizeof(char *) * (k + 1));
+			cat[k] = NULL;
 			cat[0] = _strdup(total);
+			printf("aqui es cat[0] %s\n", cat[0]);
 
 			for (j = 1; parse[j]; j++)
 				cat[j] = _strdup(parse[j]);
-
-			printf("%salgooooooooooooooooo\n", cat[0]);
-			return("holi");
+			printf("caaaaaaaaaaaaaaaaaaaaat = %s\n", cat[j]);
+			execute(cat);
+			return(total);
 		}
+		free(total);
 	}
 	return (NULL);
 }

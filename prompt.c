@@ -13,7 +13,7 @@ char *read_line(void)
 
 	/*_puts("simple@shell $ ");*/
 
-	_puts("Estoy en read_line\n");
+	/*_puts("Estoy en read_line\n");*/
 	if (getline(&line, &size, stdin) == -1)
 	{
 		free(line);
