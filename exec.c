@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  * execute - execution of command
  * @parse: tokenize string
@@ -22,18 +21,20 @@ int execute(char **parse)
 
 	if (parse[0] == NULL)
 		return (1);
-
 	while (list[i].s != NULL)
 	{
 		ptr = list[i].s;
 		if (_strcmp(parse[0], ptr) == 0)
+		{
+			free(parse[0]);
 			return (list[i].f());
-		i++;
+		}
+			i++;
 	}
 	pid = fork();
 	if (pid == 0)
 	{
-		if (execve(parse[0], parse, NULL) == -1)
+		if (execve(parse[0], parse, environ) == -1)
 		{
 			perror("Error");
 			exit(1);

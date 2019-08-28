@@ -15,7 +15,6 @@ int main(int argc, char **argv, char **environ)
 	char *command;
 	char **tokens;
 	(void)argc;
-
 	tokens = find_path(environ);
 
 	signal(SIGINT, SIG_IGN);
@@ -26,7 +25,6 @@ int main(int argc, char **argv, char **environ)
 		command = args_path(argv, tokens);
 		if (command == NULL)
 			execute(argv);
-		free(line);
 		free(argv);
 		free(command);
 	}
