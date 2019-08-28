@@ -1,8 +1,9 @@
 #include "holberton.h"
 
 /**
+ * main - entry point of the program
  *
- *
+ * Return: 0 on success
  */
 
 int main(int argc, char **argv, char **environ)

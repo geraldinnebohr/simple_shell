@@ -10,7 +10,7 @@
 #include <limits.h>
 #include <signal.h>
 /**
- * struct optype - struct for built in commands
+ * struct builtin - struct for built in commands
  *
  * @s: string
  * @f: pointer to function
@@ -19,7 +19,7 @@ typedef struct builtin
 {
 	char *s;
 	int (*f)(void);
-}builtin_t;
+} builtin_t;
 char *read_line(void);
 char **splits(char *line, char *delim);
 int execute(char **parse);
@@ -37,4 +37,6 @@ int _strcmp(char *, char *);
 int _help(void);
 int my_exit(void);
 int my_env(void);
+int _cd(void);
+void number_line(int line_n);
 #endif

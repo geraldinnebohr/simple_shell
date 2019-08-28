@@ -1,9 +1,13 @@
 #include "holberton.h"
 
 /**
+ * _realloc - reallocates the given area of memory
  *
+ * @ptr: array of pointer
+ * @old_size: size allocated before
+ * @new_size: size to allocate\
  *
- *
+ * Return: new allocate space
  */
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
@@ -42,12 +46,20 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	return (new);
 }
 
+/**
+ * splits - tokenize the input string
+ *
+ * @line: string from input
+ * @delim: delimitador
+ *
+ * Return: Array of pointers to every string
+ */
+
 char **splits(char *line, char *delim)
 {
 	char **pptoken;
 	int buf = 1024, i = 0;
-
-	/*_puts("Estoy en splits \n");*/
+	
 	pptoken = malloc(sizeof(char*) * buf);
 	if (!pptoken)
 		exit(99);
@@ -60,7 +72,7 @@ char **splits(char *line, char *delim)
 		if (i >= buf)
 		{
 			buf += buf;
-			pptoken = _realloc(pptoken, buf, buf * (sizeof(char*)));
+			pptoken = _realloc(pptoken, buf, buf * (sizeof(char *)));
 			if (!pptoken)
 				exit(98);
 		}
