@@ -5,7 +5,9 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/types.h>
+#include <sys/stat.h>
 #include <sys/wait.h>
+#include <limits.h>
 #include <signal.h>
 /**
  * struct builtin - struct for built in commands
@@ -19,10 +21,17 @@ typedef struct builtin
 	int (*f)(void);
 } builtin_t;
 char *read_line(void);
-char **splits(char *line);
-int execute(char **parse, int line_n);
+char **splits(char *line, char *delim);
+int execute(char **parse);
 void _puts(char *str);
-int _putchar (char c);
+int _putchar(char c);
+int _strlen(char *s);
+char **find_path(char **environ);
+char *_getenv(char **environ, char *dirname);
+char *args_path(char **parse, char **tokens);
+char *_strdup(char *str);
+char *if_exists(char **environ);
+extern char **environ;
 char *_strcat(char *dest, char *src);
 int _strcmp(char *, char *);
 int _help(void);

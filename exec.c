@@ -38,11 +38,9 @@ int execute(char **parse, int line_n)
 	{
 		if (execve(parse[0], parse, NULL) == -1)
 		{
-			_puts("./hsh: ");
-			number_line(line_n);
-			perror(parse[0]);
-		}
-		exit(1);
+			perror("Error");
+			exit(1);
+    }
 	}
 	else if (pid > 0)
 		wait(&status);

@@ -12,7 +12,6 @@ char *read_line(void)
 	size_t size = 0;
 	int ret = 0;
 
-	_puts("\x1B[32m$ \x1B[0m");
 	if (getline(&line, &size, stdin) == -1)
 	{
 		free(line);
