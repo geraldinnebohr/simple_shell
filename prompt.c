@@ -11,8 +11,10 @@ char *read_line(void)
 	size_t size = 0;
 	int ret = 0;
 
-	_puts("\x1B[32m simple@shell $ \x1B[0m");
-	if(getline(&line, &size, stdin) == -1)
+	/*_puts("simple@shell $ ");*/
+
+	/*_puts("Estoy en read_line\n");*/
+	if (getline(&line, &size, stdin) == -1)
 	{
 		free(line);
 		exit(-1);
