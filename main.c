@@ -20,6 +20,8 @@ int main(int argc, char **argv, char **environ)
 	signal(SIGINT, SIG_IGN);
 	while (1)
 	{
+		if (isatty(STDIN_FILENO))
+			write(STDOUT_FILENO, "$ ", 2);
 		line = read_line();
 		argv = splits(line, delim);
 		command = args_path(argv, tokens);
