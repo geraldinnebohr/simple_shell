@@ -23,10 +23,10 @@ int my_exit(void)
 }
 /**
  * my_env - print the environmet variables
- *
+ * @environ: global variable
  * Return: status condition continue loop
  */
-int my_env(void)
+int my_env(char **environ)
 {
 	char *env = *environ;
 	int i = 0;

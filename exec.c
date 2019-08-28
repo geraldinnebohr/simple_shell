@@ -2,9 +2,10 @@
 /**
  * execute - execution of command
  * @parse: tokenize string
+ * @environ: is a global variable
  * Return: return 0 or 1 status for loop
  */
-int execute(char **parse)
+int execute(char **parse, char **environ)
 {
 	int i = 0;
 	pid_t pid;
@@ -14,7 +15,7 @@ int execute(char **parse)
 	builtin_t list[] = {
 		{"help", _help},
 		{"exit", my_exit},
-		{"env", my_env},
+		/*{"env", my_env},*/
 		{"cd", _cd},
 		{NULL, NULL}
 	};

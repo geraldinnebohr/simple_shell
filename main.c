@@ -26,7 +26,7 @@ int main(int argc, char **argv, char **environ)
 		argv = splits(line, delim);
 		command = args_path(argv, tokens);
 		if (command == NULL)
-			execute(argv);
+			execute(argv, environ);
 		free(argv);
 		free(command);
 	}

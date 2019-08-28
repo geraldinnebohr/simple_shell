@@ -22,7 +22,7 @@ typedef struct builtin
 } builtin_t;
 char *read_line(void);
 char **splits(char *line, char *delim);
-int execute(char **parse);
+int execute(char **parse, char **environ);
 void _puts(char *str);
 int _putchar(char c);
 int _strlen(char *s);
@@ -31,12 +31,12 @@ char *_getenv(char **environ, char *dirname);
 char *args_path(char **parse, char **tokens);
 char *_strdup(char *str);
 char *if_exists(char **environ);
-extern char **environ;
+/*extern char **environ;*/
 char *_strcat(char *dest, char *src);
 int _strcmp(char *, char *);
 int _help(void);
 int my_exit(void);
-int my_env(void);
+int my_env(char **environ);
 int _cd(void);
 void number_line(int line_n);
 #endif
