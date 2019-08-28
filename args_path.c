@@ -53,7 +53,13 @@ char *args_path(char **parse, char **new)
 				cat[j] = _strdup(parse[j]);
 			execute(cat, NULL);
 			for (l = 0; cat[l] != '\0'; l++)
-				free(cat[l]);
+			{
+				/*for (n = 0; cat[n] != '\0'; n++)*/
+				{
+					free(cat[l]);
+					/*free(cat[n]);*/
+				}
+			}
 			return (total);
 		}
 		free(total);

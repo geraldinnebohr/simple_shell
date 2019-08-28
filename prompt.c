@@ -17,7 +17,7 @@ char *read_line(void)
 		free(line);
 		exit(-1);
 	}
-	ret = strlen(line);
+	ret = _strlen(line);
 	line[ret - 1] = '\0';
 
 	return (line);

@@ -29,7 +29,6 @@ int main(int argc, char **argv, char **environ)
 			execute(argv, environ);
 		free(line);
 		free(argv);
-		free(tokens);
 		free(command);
 	}
 	return (0);
