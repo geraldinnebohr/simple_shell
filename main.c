@@ -20,9 +20,7 @@ int main(int argc, char **argv, char **environ)
 	{
 		line = read_line();
 		argv = splits(line, delim);
-		printf("main argv[0] = %s\n", argv[0]);
 		command = args_path(argv, tokens);
-		printf("args path actual en main ==> %s\n", command);
 		if (command == NULL)
 			execute(argv);
 		free(line);

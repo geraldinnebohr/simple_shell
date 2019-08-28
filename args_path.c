@@ -32,9 +32,6 @@ char *args_path(char **parse, char **new)
 	char *total, **cat;
 	int i, j, k;
 	struct stat status;
-	/*printf("estoy en args_path\n");*/
-
-	/*printf("aqui es new en cero%s\n", new[0]);*/
 	for (i = 0; new[i]; i++)
 	{
 		total = malloc(60);
@@ -49,11 +46,9 @@ char *args_path(char **parse, char **new)
 			cat = malloc(sizeof(char *) * (k + 1));
 			cat[k] = NULL;
 			cat[0] = _strdup(total);
-			printf("aqui es cat[0] %s\n", cat[0]);
 
 			for (j = 1; parse[j]; j++)
 				cat[j] = _strdup(parse[j]);
-			printf("caaaaaaaaaaaaaaaaaaaaat = %s\n", cat[j]);
 			execute(cat);
 			return(total);
 		}
