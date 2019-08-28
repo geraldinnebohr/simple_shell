@@ -31,7 +31,7 @@ char *_strcat(char *dest, char *src)
 char *args_path(char **parse, char **new)
 {
 	char *total, **cat;
-	int i, j, k;
+	int i, j, k, l;
 	struct stat status;
 
 	for (i = 0; new[i]; i++)
@@ -52,6 +52,8 @@ char *args_path(char **parse, char **new)
 			for (j = 1; parse[j]; j++)
 				cat[j] = _strdup(parse[j]);
 			execute(cat, NULL);
+			for (l = 0; cat[l] != '\0'; l++)
+				free(cat[l]);
 			return (total);
 		}
 		free(total);

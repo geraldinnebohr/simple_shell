@@ -12,8 +12,8 @@ int main(int argc, char **argv, char **environ)
 {
 	char *line = NULL;
 	char *delim = "\t \a\n";
-	char *command;
-	char **tokens;
+	char *command, **tokens;
+
 	(void)argc;
 	tokens = find_path(environ);
 
@@ -27,7 +27,9 @@ int main(int argc, char **argv, char **environ)
 		command = args_path(argv, tokens);
 		if (command == NULL)
 			execute(argv, environ);
+		free(line);
 		free(argv);
+		free(tokens);
 		free(command);
 	}
 	return (0);
