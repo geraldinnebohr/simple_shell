@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * length - function that checks the =
+ * length - function that checks the = character
  * @str: is a char
  * Return: str
  */
@@ -16,7 +16,7 @@ char *length(char *str)
 }
 
 /**
- * compare - function that compares
+ * compare - function that compares two strings
  * @varname: is a char
  * @dirname: is a char
  * Return: 1
