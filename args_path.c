@@ -22,9 +22,10 @@ char *_strcat(char *dest, char *src)
 }
 
 /**
- *
- *
- *
+ * args_path - concatenates the arguments
+ * @parse: is a char
+ * @new: is a char
+ * Return: total or null
  */
 
 char *args_path(char **parse, char **new)
@@ -32,6 +33,7 @@ char *args_path(char **parse, char **new)
 	char *total, **cat;
 	int i, j, k;
 	struct stat status;
+
 	for (i = 0; new[i]; i++)
 	{
 		total = malloc(60);
@@ -50,7 +52,7 @@ char *args_path(char **parse, char **new)
 			for (j = 1; parse[j]; j++)
 				cat[j] = _strdup(parse[j]);
 			execute(cat);
-			return(total);
+			return (total);
 		}
 		free(total);
 	}

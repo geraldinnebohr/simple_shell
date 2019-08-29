@@ -1,8 +1,11 @@
 #include "holberton.h"
 
 /**
- *
- *
+ * main - principal function
+ * @argc: is an int
+ * @argv: is a char
+ * @environ: global variable
+ * Return: 0
  */
 
 int main(int argc, char **argv, char **environ)

@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- *
- *
+ * read_line - reads the line
+ * Return: line
  */
 
 char *read_line(void)
@@ -11,9 +11,6 @@ char *read_line(void)
 	size_t size = 0;
 	int ret = 0;
 
-	/*_puts("simple@shell $ ");*/
-
-	/*_puts("Estoy en read_line\n");*/
 	if (getline(&line, &size, stdin) == -1)
 	{
 		free(line);

@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- *
- *
- *
+ * length - function that checks the =
+ * @str: is a char
+ * Return: str
  */
 
 char *length(char *str)
@@ -14,6 +14,13 @@ char *length(char *str)
 		;
 	return (str + i + 1);
 }
+
+/**
+ * compare - function that compares
+ * @varname: is a char
+ * @dirname: is a char
+ * Return: 1
+ */
 
 int compare(char *varname, char *dirname)
 {
@@ -27,10 +34,17 @@ int compare(char *varname, char *dirname)
 	return (1);
 }
 
+/**
+ * _getenv - function that gets the path in the environ
+ * @environ: global variable
+ * @dirname: is a char
+ * Return: final or null
+ */
+
 char *_getenv(char **environ, char *dirname)
 {
-        int k, j;
-        char *varname, *final;
+	int k, j;
+	char *varname, *final;
 
 	for (j = 0; environ[j]; j++)
 	{

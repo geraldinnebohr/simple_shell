@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * main - execve example
- *
+ * execute - execute the commands
+ * @parse: is a char
  * Return: Always 0.
  */
 
@@ -11,7 +11,6 @@ int execute(char **parse)
 	pid_t pid;
 	int status;
 
-	/*_puts("3. Estoy en execute\n");*/
 	pid = fork();
 	if (pid == 0)
 	{
