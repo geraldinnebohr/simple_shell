@@ -16,7 +16,7 @@ int execute(char **parse)
 	{
 		if (execve(parse[0], parse, NULL) == -1)
 		{
-			perror("Error:");
+			perror(parse[0]);
 			exit(1);
 		}
 	}

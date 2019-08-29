@@ -14,7 +14,7 @@ char **splits(char *line, char *delim);
 int execute(char **parse);
 void _puts(char *str);
 int _putchar(char c);
-int _strlen(char *s);
+unsigned int _strlen(char *s);
 char **find_path(char **environ);
 char *_getenv(char **environ, char *dirname);
 char *args_path(char **parse, char **tokens);
