@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * read_line - reads the line
+ * read_line - reads the command line
  * Return: line
  */
 
