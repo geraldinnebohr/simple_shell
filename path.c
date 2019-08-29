@@ -2,7 +2,7 @@
 
 /**
  * find_path - function that finds the path
- * @environ: global variable
+ * @environ: global variable environment
  * Return: path in tokens
  */
 
