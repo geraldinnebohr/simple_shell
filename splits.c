@@ -2,7 +2,7 @@
 
 /**
  * _realloc - reallocate memory
- * @ptr: void variable
+ * @ptr: void variable pointer
  * @old_size: integer
  * @new_size: integer
  * Return: Null
