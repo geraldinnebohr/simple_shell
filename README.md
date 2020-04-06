@@ -49,4 +49,4 @@ Create a new branch with the name of your feature or fix and do a pull request t
 
 ## Authors
 * **Geraldinne Bohórquez** - [geraldinnebohr](https://github.com/geraldinnebohr)
-* **Diego Monroy** - [Diego-Zen](https://github.com/Diego-Zen)
+* **Diego Monroy** - [diegozencode](https://github.com/diegozencode)
